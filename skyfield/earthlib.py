@@ -135,7 +135,7 @@ def earth_rotation_angle(jd_ut1, fraction_ut1=0.0):
     return (th % 1.0 + jd_ut1 % 1.0 + fraction_ut1) % 1.0
 
 def refraction(alt_degrees, temperature_C, pressure_mbar, usno=False):
-    """Given an observed altitude, return how much the image is refracted.
+    """Given an observed altitude, estimate atmospheric refraction, in degrees.
 
     Skyfield applies a full refraction correction down to -3.0°,
     followed by a smooth cosine-blended tapering between -3.0°
