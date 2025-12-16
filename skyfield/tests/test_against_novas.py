@@ -258,99 +258,99 @@ def test_star_vector():
             1e-3 * meter)  # TODO: was 1e-6 before switch to modern au
 
 def test_refraction0():
-    r = earthlib.refraction(-5, 10, 1010)
+    r = earthlib.refraction(-5, 10, 1010, usno=True)
     compare(r, 0.0, 1e-9 * arcsecond)
 
 def test_refraction1():
-    r = earthlib.refraction(-5, 10, 1013.25)
+    r = earthlib.refraction(-5, 10, 1013.25, usno=True)
     compare(r, 0.0, 1e-9 * arcsecond)
 
 def test_refraction2():
-    r = earthlib.refraction(-5, 25, 1010)
+    r = earthlib.refraction(-5, 25, 1010, usno=True)
     compare(r, 0.0, 1e-9 * arcsecond)
 
 def test_refraction3():
-    r = earthlib.refraction(-5, 25, 1013.25)
+    r = earthlib.refraction(-5, 25, 1013.25, usno=True)
     compare(r, 0.0, 1e-9 * arcsecond)
 
 def test_refraction4():
-    r = earthlib.refraction(-1, 10, 1010)
+    r = earthlib.refraction(-1, 10, 1010, usno=True)
     compare(r, 0.8296919418249878, 1e-9 * arcsecond)
 
 def test_refraction5():
-    r = earthlib.refraction(-1, 10, 1013.25)
+    r = earthlib.refraction(-1, 10, 1013.25, usno=True)
     compare(r, 0.8323617426278902, 1e-9 * arcsecond)
 
 def test_refraction6():
-    r = earthlib.refraction(-1, 25, 1010)
+    r = earthlib.refraction(-1, 25, 1010, usno=True)
     compare(r, 0.7879289246190321, 1e-9 * arcsecond)
 
 def test_refraction7():
-    r = earthlib.refraction(-1, 25, 1013.25)
+    r = earthlib.refraction(-1, 25, 1013.25, usno=True)
     compare(r, 0.7904643394754796, 1e-9 * arcsecond)
 
 def test_refraction8():
-    r = earthlib.refraction(15, 10, 1010)
+    r = earthlib.refraction(15, 10, 1010, usno=True)
     compare(r, 0.06056215494995108, 1e-9 * arcsecond)
 
 def test_refraction9():
-    r = earthlib.refraction(15, 10, 1013.25)
+    r = earthlib.refraction(15, 10, 1013.25, usno=True)
     compare(r, 0.06075703317132469, 1e-9 * arcsecond)
 
 def test_refraction10():
-    r = earthlib.refraction(15, 25, 1010)
+    r = earthlib.refraction(15, 25, 1010, usno=True)
     compare(r, 0.057513724331664955, 1e-9 * arcsecond)
 
 def test_refraction11():
-    r = earthlib.refraction(15, 25, 1013.25)
+    r = earthlib.refraction(15, 25, 1013.25, usno=True)
     compare(r, 0.057698793246593584, 1e-9 * arcsecond)
 
 def test_refraction12():
-    r = earthlib.refraction(89.95, 10, 1010)
+    r = earthlib.refraction(89.95, 10, 1010, usno=True)
     compare(r, 0.0, 1e-9 * arcsecond)
 
 def test_refraction13():
-    r = earthlib.refraction(89.95, 10, 1013.25)
+    r = earthlib.refraction(89.95, 10, 1013.25, usno=True)
     compare(r, 0.0, 1e-9 * arcsecond)
 
 def test_refraction14():
-    r = earthlib.refraction(89.95, 25, 1010)
+    r = earthlib.refraction(89.95, 25, 1010, usno=True)
     compare(r, 0.0, 1e-9 * arcsecond)
 
 def test_refraction15():
-    r = earthlib.refraction(89.95, 25, 1013.25)
+    r = earthlib.refraction(89.95, 25, 1013.25, usno=True)
     compare(r, 0.0, 1e-9 * arcsecond)
 
 def test_refract0():
-    alt = earthlib.refract(-90, 10.0, 1010.0)
+    alt = earthlib.refract(-90, 10.0, 1010.0, usno=True)
     compare(alt, -90.0, 1e-9 * arcsecond)
 
 def test_refract1():
-    alt = earthlib.refract(-2, 10.0, 1010.0)
+    alt = earthlib.refract(-2, 10.0, 1010.0, usno=True)
     compare(alt, -2.0, 1e-9 * arcsecond)
 
 def test_refract2():
-    alt = earthlib.refract(-1, 10.0, 1010.0)
+    alt = earthlib.refract(-1, 10.0, 1010.0, usno=True)
     compare(alt, -0.34540033564054795, 1e-9 * arcsecond)
 
 def test_refract3():
-    alt = earthlib.refract(0, 10.0, 1010.0)
+    alt = earthlib.refract(0, 10.0, 1010.0, usno=True)
     compare(alt, 0.4819388815393779, 1e-9 * arcsecond)
 
 def test_refract4():
-    alt = earthlib.refract(1, 10.0, 1010.0)
+    alt = earthlib.refract(1, 10.0, 1010.0, usno=True)
     compare(alt, 1.362447444478633, 1e-9 * arcsecond)
 
 def test_refract5():
-    alt = earthlib.refract(3, 10.0, 1010.0)
+    alt = earthlib.refract(3, 10.0, 1010.0, usno=True)
     compare(alt, 3.227564692764261, 1e-9 * arcsecond)
 
 def test_refract6():
-    alt = earthlib.refract(9, 10.0, 1010.0)
+    alt = earthlib.refract(9, 10.0, 1010.0, usno=True)
     compare(alt, 9.098059272393698, 1e-9 * arcsecond)
 
 def test_refract7():
-    alt = earthlib.refract(90, 10.0, 1010.0)
+    alt = earthlib.refract(90, 10.0, 1010.0, usno=True)
     compare(alt, 90.0, 1e-9 * arcsecond)
 
 def test_from_altaz_0(earth):
@@ -1765,11 +1765,11 @@ def test_mercury_topocentric_date0(de405):
     compare(alt.degrees, 46.3212267566032, 0.0005 * arcsecond)
     compare(az.degrees, 262.18590521567705, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 46.33688339908365, 0.0005 * arcsecond)
     compare(az.degrees, 262.18590521567705, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 46.33704240110901, 0.0005 * arcsecond)
     compare(az.degrees, 262.18590521567705, 0.0005 * arcsecond)
 
@@ -1791,11 +1791,11 @@ def test_mercury_topocentric_date1(de405):
     compare(alt.degrees, -17.340667089884377, 0.0005 * arcsecond)
     compare(az.degrees, 300.9176579181716, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -17.340667089884377, 0.0005 * arcsecond)
     compare(az.degrees, 300.9176579181716, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -17.340667089884377, 0.0005 * arcsecond)
     compare(az.degrees, 300.9176579181716, 0.0005 * arcsecond)
 
@@ -1817,11 +1817,11 @@ def test_mercury_topocentric_date2(de405):
     compare(alt.degrees, -0.12765060376706572, 0.0005 * arcsecond)
     compare(az.degrees, 121.97764361867154, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 0.36890915770104016, 0.0005 * arcsecond)
     compare(az.degrees, 121.97764361867154, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 0.3731892291678349, 0.0005 * arcsecond)
     compare(az.degrees, 121.97764361867154, 0.0005 * arcsecond)
 
@@ -1843,11 +1843,11 @@ def test_mercury_topocentric_date3(de405):
     compare(alt.degrees, -9.116616855755964, 0.0005 * arcsecond)
     compare(az.degrees, 300.1420264373104, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -9.116616855755964, 0.0005 * arcsecond)
     compare(az.degrees, 300.1420264373104, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -9.116616855755964, 0.0005 * arcsecond)
     compare(az.degrees, 300.1420264373104, 0.0005 * arcsecond)
 
@@ -1869,11 +1869,11 @@ def test_mercury_topocentric_date4(de405):
     compare(alt.degrees, (46.3212267566032, -17.340667089884377, -0.12765060376706572, -9.116616855755964), 0.0005 * arcsecond)
     compare(az.degrees, (262.18590521567705, 300.9176579181716, 121.97764361867154, 300.1420264373104), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, (46.33688339908365, -17.340667089884377, 0.36890915770104016, -9.116616855755964), 0.0005 * arcsecond)
     compare(az.degrees, (262.18590521567705, 300.9176579181716, 121.97764361867154, 300.1420264373104), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, (46.33704240110901, -17.340667089884377, 0.3731892291678349, -9.116616855755964), 0.0005 * arcsecond)
     compare(az.degrees, (262.18590521567705, 300.9176579181716, 121.97764361867154, 300.1420264373104), 0.0005 * arcsecond)
 
@@ -1895,11 +1895,11 @@ def test_venus_topocentric_date0(de405):
     compare(alt.degrees, 11.152374062990575, 0.0005 * arcsecond)
     compare(az.degrees, 287.0030740239532, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 11.23199275246975, 0.0005 * arcsecond)
     compare(az.degrees, 287.0030740239532, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 11.232796262162083, 0.0005 * arcsecond)
     compare(az.degrees, 287.0030740239532, 0.0005 * arcsecond)
 
@@ -1921,11 +1921,11 @@ def test_venus_topocentric_date1(de405):
     compare(alt.degrees, -34.134914076462266, 0.0005 * arcsecond)
     compare(az.degrees, 313.64872862118426, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -34.134914076462266, 0.0005 * arcsecond)
     compare(az.degrees, 313.64872862118426, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -34.134914076462266, 0.0005 * arcsecond)
     compare(az.degrees, 313.64872862118426, 0.0005 * arcsecond)
 
@@ -1947,11 +1947,11 @@ def test_venus_topocentric_date2(de405):
     compare(alt.degrees, 23.228910604670816, 0.0005 * arcsecond)
     compare(az.degrees, 142.1161398141626, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 23.266773672986005, 0.0005 * arcsecond)
     compare(az.degrees, 142.1161398141626, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 23.267157712313676, 0.0005 * arcsecond)
     compare(az.degrees, 142.1161398141626, 0.0005 * arcsecond)
 
@@ -1973,11 +1973,11 @@ def test_venus_topocentric_date3(de405):
     compare(alt.degrees, -24.359995410915445, 0.0005 * arcsecond)
     compare(az.degrees, 327.640588969984, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -24.359995410915445, 0.0005 * arcsecond)
     compare(az.degrees, 327.640588969984, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -24.359995410915445, 0.0005 * arcsecond)
     compare(az.degrees, 327.640588969984, 0.0005 * arcsecond)
 
@@ -1999,11 +1999,11 @@ def test_venus_topocentric_date4(de405):
     compare(alt.degrees, (11.152374062990575, -34.134914076462266, 23.228910604670816, -24.359995410915445), 0.0005 * arcsecond)
     compare(az.degrees, (287.0030740239532, 313.64872862118426, 142.1161398141626, 327.640588969984), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, (11.23199275246975, -34.134914076462266, 23.266773672986005, -24.359995410915445), 0.0005 * arcsecond)
     compare(az.degrees, (287.0030740239532, 313.64872862118426, 142.1161398141626, 327.640588969984), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, (11.232796262162083, -34.134914076462266, 23.267157712313676, -24.359995410915445), 0.0005 * arcsecond)
     compare(az.degrees, (287.0030740239532, 313.64872862118426, 142.1161398141626, 327.640588969984), 0.0005 * arcsecond)
 
@@ -2025,11 +2025,11 @@ def test_mars_topocentric_date0(de405):
     compare(alt.degrees, -3.540294697028628, 0.0005 * arcsecond)
     compare(az.degrees, 118.34877634707522, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -3.540294697028628, 0.0005 * arcsecond)
     compare(az.degrees, 118.34877634707522, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -3.540294697028628, 0.0005 * arcsecond)
     compare(az.degrees, 118.34877634707522, 0.0005 * arcsecond)
 
@@ -2051,11 +2051,11 @@ def test_mars_topocentric_date1(de405):
     compare(alt.degrees, -54.1089628741949, 0.0005 * arcsecond)
     compare(az.degrees, 338.0117138951488, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -54.1089628741949, 0.0005 * arcsecond)
     compare(az.degrees, 338.0117138951488, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -54.1089628741949, 0.0005 * arcsecond)
     compare(az.degrees, 338.0117138951488, 0.0005 * arcsecond)
 
@@ -2077,11 +2077,11 @@ def test_mars_topocentric_date2(de405):
     compare(alt.degrees, -36.90573266459917, 0.0005 * arcsecond)
     compare(az.degrees, 76.12368450672822, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -36.90573266459917, 0.0005 * arcsecond)
     compare(az.degrees, 76.12368450672822, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -36.90573266459917, 0.0005 * arcsecond)
     compare(az.degrees, 76.12368450672822, 0.0005 * arcsecond)
 
@@ -2103,11 +2103,11 @@ def test_mars_topocentric_date3(de405):
     compare(alt.degrees, 22.094794272017666, 0.0005 * arcsecond)
     compare(az.degrees, 231.6381663847761, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 22.134776069489533, 0.0005 * arcsecond)
     compare(az.degrees, 231.6381663847761, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 22.135181528743814, 0.0005 * arcsecond)
     compare(az.degrees, 231.6381663847761, 0.0005 * arcsecond)
 
@@ -2129,11 +2129,11 @@ def test_mars_topocentric_date4(de405):
     compare(alt.degrees, (-3.540294697028628, -54.1089628741949, -36.90573266459917, 22.094794272017666), 0.0005 * arcsecond)
     compare(az.degrees, (118.34877634707522, 338.0117138951488, 76.12368450672822, 231.6381663847761), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, (-3.540294697028628, -54.1089628741949, -36.90573266459917, 22.134776069489533), 0.0005 * arcsecond)
     compare(az.degrees, (118.34877634707522, 338.0117138951488, 76.12368450672822, 231.6381663847761), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, (-3.540294697028628, -54.1089628741949, -36.90573266459917, 22.135181528743814), 0.0005 * arcsecond)
     compare(az.degrees, (118.34877634707522, 338.0117138951488, 76.12368450672822, 231.6381663847761), 0.0005 * arcsecond)
 
@@ -2155,11 +2155,11 @@ def test_jupiter_barycenter_topocentric_date0(de405):
     compare(alt.degrees, 49.40651603144681, 0.0005 * arcsecond)
     compare(az.degrees, 156.07088561561997, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 49.42056980196601, 0.0005 * arcsecond)
     compare(az.degrees, 156.07088561561997, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 49.420712533159694, 0.0005 * arcsecond)
     compare(az.degrees, 156.07088561561997, 0.0005 * arcsecond)
 
@@ -2181,11 +2181,11 @@ def test_jupiter_barycenter_topocentric_date1(de405):
     compare(alt.degrees, 38.00505126690997, 0.0005 * arcsecond)
     compare(az.degrees, 270.63795554820535, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 38.02600464378366, 0.0005 * arcsecond)
     compare(az.degrees, 270.63795554820535, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 38.02621739324931, 0.0005 * arcsecond)
     compare(az.degrees, 270.63795554820535, 0.0005 * arcsecond)
 
@@ -2207,11 +2207,11 @@ def test_jupiter_barycenter_topocentric_date2(de405):
     compare(alt.degrees, -42.482560972481394, 0.0005 * arcsecond)
     compare(az.degrees, 359.3596746827537, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -42.482560972481394, 0.0005 * arcsecond)
     compare(az.degrees, 359.3596746827537, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -42.482560972481394, 0.0005 * arcsecond)
     compare(az.degrees, 359.3596746827537, 0.0005 * arcsecond)
 
@@ -2233,11 +2233,11 @@ def test_jupiter_barycenter_topocentric_date3(de405):
     compare(alt.degrees, -29.289013841967986, 0.0005 * arcsecond)
     compare(az.degrees, 4.327425566855523, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -29.289013841967986, 0.0005 * arcsecond)
     compare(az.degrees, 4.327425566855523, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -29.289013841967986, 0.0005 * arcsecond)
     compare(az.degrees, 4.327425566855523, 0.0005 * arcsecond)
 
@@ -2259,11 +2259,11 @@ def test_jupiter_barycenter_topocentric_date4(de405):
     compare(alt.degrees, (49.40651603144681, 38.00505126690997, -42.482560972481394, -29.289013841967986), 0.0005 * arcsecond)
     compare(az.degrees, (156.07088561561997, 270.63795554820535, 359.3596746827537, 4.327425566855523), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, (49.42056980196601, 38.02600464378366, -42.482560972481394, -29.289013841967986), 0.0005 * arcsecond)
     compare(az.degrees, (156.07088561561997, 270.63795554820535, 359.3596746827537, 4.327425566855523), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, (49.420712533159694, 38.02621739324931, -42.482560972481394, -29.289013841967986), 0.0005 * arcsecond)
     compare(az.degrees, (156.07088561561997, 270.63795554820535, 359.3596746827537, 4.327425566855523), 0.0005 * arcsecond)
 
@@ -2285,11 +2285,11 @@ def test_saturn_barycenter_topocentric_date0(de405):
     compare(alt.degrees, -20.662686940324093, 0.0005 * arcsecond)
     compare(az.degrees, 306.01978569992787, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -20.662686940324093, 0.0005 * arcsecond)
     compare(az.degrees, 306.01978569992787, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -20.662686940324093, 0.0005 * arcsecond)
     compare(az.degrees, 306.01978569992787, 0.0005 * arcsecond)
 
@@ -2311,11 +2311,11 @@ def test_saturn_barycenter_topocentric_date1(de405):
     compare(alt.degrees, -48.93337647838982, 0.0005 * arcsecond)
     compare(az.degrees, 76.8837444919445, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -48.93337647838982, 0.0005 * arcsecond)
     compare(az.degrees, 76.8837444919445, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -48.93337647838982, 0.0005 * arcsecond)
     compare(az.degrees, 76.8837444919445, 0.0005 * arcsecond)
 
@@ -2337,11 +2337,11 @@ def test_saturn_barycenter_topocentric_date2(de405):
     compare(alt.degrees, -36.501918751911674, 0.0005 * arcsecond)
     compare(az.degrees, 341.22347230453323, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -36.501918751911674, 0.0005 * arcsecond)
     compare(az.degrees, 341.22347230453323, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -36.501918751911674, 0.0005 * arcsecond)
     compare(az.degrees, 341.22347230453323, 0.0005 * arcsecond)
 
@@ -2363,11 +2363,11 @@ def test_saturn_barycenter_topocentric_date3(de405):
     compare(alt.degrees, 22.96675851611188, 0.0005 * arcsecond)
     compare(az.degrees, 238.00627672875672, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 23.005094362956072, 0.0005 * arcsecond)
     compare(az.degrees, 238.00627672875672, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 23.005483182929098, 0.0005 * arcsecond)
     compare(az.degrees, 238.00627672875672, 0.0005 * arcsecond)
 
@@ -2389,11 +2389,11 @@ def test_saturn_barycenter_topocentric_date4(de405):
     compare(alt.degrees, (-20.662686940324093, -48.93337647838982, -36.501918751911674, 22.96675851611188), 0.0005 * arcsecond)
     compare(az.degrees, (306.01978569992787, 76.8837444919445, 341.22347230453323, 238.00627672875672), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, (-20.662686940324093, -48.93337647838982, -36.501918751911674, 23.005094362956072), 0.0005 * arcsecond)
     compare(az.degrees, (306.01978569992787, 76.8837444919445, 341.22347230453323, 238.00627672875672), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, (-20.662686940324093, -48.93337647838982, -36.501918751911674, 23.005483182929098), 0.0005 * arcsecond)
     compare(az.degrees, (306.01978569992787, 76.8837444919445, 341.22347230453323, 238.00627672875672), 0.0005 * arcsecond)
 
@@ -2415,11 +2415,11 @@ def test_uranus_barycenter_topocentric_date0(de405):
     compare(alt.degrees, 49.06396822144731, 0.0005 * arcsecond)
     compare(az.degrees, 156.65256040205296, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 49.078192535060566, 0.0005 * arcsecond)
     compare(az.degrees, 156.65256040205296, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 49.07833699756142, 0.0005 * arcsecond)
     compare(az.degrees, 156.65256040205296, 0.0005 * arcsecond)
 
@@ -2441,11 +2441,11 @@ def test_uranus_barycenter_topocentric_date1(de405):
     compare(alt.degrees, -37.0259637798912, 0.0005 * arcsecond)
     compare(az.degrees, 91.80748703145906, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -37.0259637798912, 0.0005 * arcsecond)
     compare(az.degrees, 91.80748703145906, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -37.0259637798912, 0.0005 * arcsecond)
     compare(az.degrees, 91.80748703145906, 0.0005 * arcsecond)
 
@@ -2467,11 +2467,11 @@ def test_uranus_barycenter_topocentric_date2(de405):
     compare(alt.degrees, -29.175475562665554, 0.0005 * arcsecond)
     compare(az.degrees, 88.85671230431439, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -29.175475562665554, 0.0005 * arcsecond)
     compare(az.degrees, 88.85671230431439, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -29.175475562665554, 0.0005 * arcsecond)
     compare(az.degrees, 88.85671230431439, 0.0005 * arcsecond)
 
@@ -2493,11 +2493,11 @@ def test_uranus_barycenter_topocentric_date3(de405):
     compare(alt.degrees, -14.5260443119261, 0.0005 * arcsecond)
     compare(az.degrees, 74.60219420538265, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -14.5260443119261, 0.0005 * arcsecond)
     compare(az.degrees, 74.60219420538265, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -14.5260443119261, 0.0005 * arcsecond)
     compare(az.degrees, 74.60219420538265, 0.0005 * arcsecond)
 
@@ -2519,11 +2519,11 @@ def test_uranus_barycenter_topocentric_date4(de405):
     compare(alt.degrees, (49.06396822144731, -37.0259637798912, -29.175475562665554, -14.5260443119261), 0.0005 * arcsecond)
     compare(az.degrees, (156.65256040205296, 91.80748703145906, 88.85671230431439, 74.60219420538265), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, (49.078192535060566, -37.0259637798912, -29.175475562665554, -14.5260443119261), 0.0005 * arcsecond)
     compare(az.degrees, (156.65256040205296, 91.80748703145906, 88.85671230431439, 74.60219420538265), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, (49.07833699756142, -37.0259637798912, -29.175475562665554, -14.5260443119261), 0.0005 * arcsecond)
     compare(az.degrees, (156.65256040205296, 91.80748703145906, 88.85671230431439, 74.60219420538265), 0.0005 * arcsecond)
 
@@ -2545,11 +2545,11 @@ def test_neptune_barycenter_topocentric_date0(de405):
     compare(alt.degrees, 4.86937782636538, 0.0005 * arcsecond)
     compare(az.degrees, 117.29043762875409, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 5.031511017145419, 0.0005 * arcsecond)
     compare(az.degrees, 117.29043762875409, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 5.033116634143141, 0.0005 * arcsecond)
     compare(az.degrees, 117.29043762875409, 0.0005 * arcsecond)
 
@@ -2571,11 +2571,11 @@ def test_neptune_barycenter_topocentric_date1(de405):
     compare(alt.degrees, -40.43318694811052, 0.0005 * arcsecond)
     compare(az.degrees, 86.51833613444356, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -40.43318694811052, 0.0005 * arcsecond)
     compare(az.degrees, 86.51833613444356, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -40.43318694811052, 0.0005 * arcsecond)
     compare(az.degrees, 86.51833613444356, 0.0005 * arcsecond)
 
@@ -2597,11 +2597,11 @@ def test_neptune_barycenter_topocentric_date2(de405):
     compare(alt.degrees, -21.102154672787563, 0.0005 * arcsecond)
     compare(az.degrees, 98.14962081515444, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -21.102154672787563, 0.0005 * arcsecond)
     compare(az.degrees, 98.14962081515444, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -21.102154672787563, 0.0005 * arcsecond)
     compare(az.degrees, 98.14962081515444, 0.0005 * arcsecond)
 
@@ -2623,11 +2623,11 @@ def test_neptune_barycenter_topocentric_date3(de405):
     compare(alt.degrees, 2.41678290499992, 0.0005 * arcsecond)
     compare(az.degrees, 106.8092597257607, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 2.6713913487620147, 0.0005 * arcsecond)
     compare(az.degrees, 106.8092597257607, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 2.6738334093305696, 0.0005 * arcsecond)
     compare(az.degrees, 106.8092597257607, 0.0005 * arcsecond)
 
@@ -2649,11 +2649,11 @@ def test_neptune_barycenter_topocentric_date4(de405):
     compare(alt.degrees, (4.86937782636538, -40.43318694811052, -21.102154672787563, 2.41678290499992), 0.0005 * arcsecond)
     compare(az.degrees, (117.29043762875409, 86.51833613444356, 98.14962081515444, 106.8092597257607), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, (5.031511017145419, -40.43318694811052, -21.102154672787563, 2.6713913487620147), 0.0005 * arcsecond)
     compare(az.degrees, (117.29043762875409, 86.51833613444356, 98.14962081515444, 106.8092597257607), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, (5.033116634143141, -40.43318694811052, -21.102154672787563, 2.6738334093305696), 0.0005 * arcsecond)
     compare(az.degrees, (117.29043762875409, 86.51833613444356, 98.14962081515444, 106.8092597257607), 0.0005 * arcsecond)
 
@@ -2675,11 +2675,11 @@ def test_pluto_barycenter_topocentric_date0(de405):
     compare(alt.degrees, 64.72856074651983, 0.0005 * arcsecond)
     compare(az.degrees, 147.2138070056058, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 64.73630449169308, 0.0005 * arcsecond)
     compare(az.degrees, 147.2138070056058, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 64.73638314930092, 0.0005 * arcsecond)
     compare(az.degrees, 147.2138070056058, 0.0005 * arcsecond)
 
@@ -2701,11 +2701,11 @@ def test_pluto_barycenter_topocentric_date1(de405):
     compare(alt.degrees, 16.233734452123414, 0.0005 * arcsecond)
     compare(az.degrees, 105.3994365631196, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 16.28889280191291, 0.0005 * arcsecond)
     compare(az.degrees, 105.3994365631196, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 16.289451329649054, 0.0005 * arcsecond)
     compare(az.degrees, 105.3994365631196, 0.0005 * arcsecond)
 
@@ -2727,11 +2727,11 @@ def test_pluto_barycenter_topocentric_date2(de405):
     compare(alt.degrees, 22.700996363632996, 0.0005 * arcsecond)
     compare(az.degrees, 127.81134408260581, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 22.739821647292274, 0.0005 * arcsecond)
     compare(az.degrees, 127.81134408260581, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 22.74021541578692, 0.0005 * arcsecond)
     compare(az.degrees, 127.81134408260581, 0.0005 * arcsecond)
 
@@ -2753,11 +2753,11 @@ def test_pluto_barycenter_topocentric_date3(de405):
     compare(alt.degrees, 28.33982206878914, 0.0005 * arcsecond)
     compare(az.degrees, 157.51785266272373, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 28.370071242061236, 0.0005 * arcsecond)
     compare(az.degrees, 157.51785266272373, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 28.370378222043662, 0.0005 * arcsecond)
     compare(az.degrees, 157.51785266272373, 0.0005 * arcsecond)
 
@@ -2779,11 +2779,11 @@ def test_pluto_barycenter_topocentric_date4(de405):
     compare(alt.degrees, (64.72856074651983, 16.233734452123414, 22.700996363632996, 28.33982206878914), 0.0005 * arcsecond)
     compare(az.degrees, (147.2138070056058, 105.3994365631196, 127.81134408260581, 157.51785266272373), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, (64.73630449169308, 16.28889280191291, 22.739821647292274, 28.370071242061236), 0.0005 * arcsecond)
     compare(az.degrees, (147.2138070056058, 105.3994365631196, 127.81134408260581, 157.51785266272373), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, (64.73638314930092, 16.289451329649054, 22.74021541578692, 28.370378222043662), 0.0005 * arcsecond)
     compare(az.degrees, (147.2138070056058, 105.3994365631196, 127.81134408260581, 157.51785266272373), 0.0005 * arcsecond)
 
@@ -2805,11 +2805,11 @@ def test_sun_topocentric_date0(de405):
     compare(alt.degrees, 46.72403357148823, 0.0005 * arcsecond)
     compare(az.degrees, 258.5550717845957, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 46.73947196634687, 0.0005 * arcsecond)
     compare(az.degrees, 258.5550717845957, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 46.73962875307724, 0.0005 * arcsecond)
     compare(az.degrees, 258.5550717845957, 0.0005 * arcsecond)
 
@@ -2831,11 +2831,11 @@ def test_sun_topocentric_date1(de405):
     compare(alt.degrees, 2.2209469369832533, 0.0005 * arcsecond)
     compare(az.degrees, 293.95636637272145, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 2.4868409787793837, 0.0005 * arcsecond)
     compare(az.degrees, 293.95636637272145, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 2.489379891081029, 0.0005 * arcsecond)
     compare(az.degrees, 293.95636637272145, 0.0005 * arcsecond)
 
@@ -2857,11 +2857,11 @@ def test_sun_topocentric_date2(de405):
     compare(alt.degrees, -5.486505415022805, 0.0005 * arcsecond)
     compare(az.degrees, 115.32008451470392, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -5.486505415022805, 0.0005 * arcsecond)
     compare(az.degrees, 115.32008451470392, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -5.486505415022805, 0.0005 * arcsecond)
     compare(az.degrees, 115.32008451470392, 0.0005 * arcsecond)
 
@@ -2883,11 +2883,11 @@ def test_sun_topocentric_date3(de405):
     compare(alt.degrees, -2.738407691502772, 0.0005 * arcsecond)
     compare(az.degrees, 286.09632001391725, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -2.738407691502772, 0.0005 * arcsecond)
     compare(az.degrees, 286.09632001391725, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -2.738407691502772, 0.0005 * arcsecond)
     compare(az.degrees, 286.09632001391725, 0.0005 * arcsecond)
 
@@ -2909,11 +2909,11 @@ def test_sun_topocentric_date4(de405):
     compare(alt.degrees, (46.72403357148823, 2.2209469369832533, -5.486505415022805, -2.738407691502772), 0.0005 * arcsecond)
     compare(az.degrees, (258.5550717845957, 293.95636637272145, 115.32008451470392, 286.09632001391725), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, (46.73947196634687, 2.4868409787793837, -5.486505415022805, -2.738407691502772), 0.0005 * arcsecond)
     compare(az.degrees, (258.5550717845957, 293.95636637272145, 115.32008451470392, 286.09632001391725), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, (46.73962875307724, 2.489379891081029, -5.486505415022805, -2.738407691502772), 0.0005 * arcsecond)
     compare(az.degrees, (258.5550717845957, 293.95636637272145, 115.32008451470392, 286.09632001391725), 0.0005 * arcsecond)
 
@@ -2935,11 +2935,11 @@ def test_moon_topocentric_date0(de405):
     compare(alt.degrees, 41.92040135025528, 0.0005 * arcsecond)
     compare(az.degrees, 151.19707488767745, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 41.938650930940234, 0.0005 * arcsecond)
     compare(az.degrees, 151.19707488767745, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 41.938836248377605, 0.0005 * arcsecond)
     compare(az.degrees, 151.19707488767745, 0.0005 * arcsecond)
 
@@ -2961,11 +2961,11 @@ def test_moon_topocentric_date1(de405):
     compare(alt.degrees, -47.74510120858602, 0.0005 * arcsecond)
     compare(az.degrees, 338.13295291812307, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, -47.74510120858602, 0.0005 * arcsecond)
     compare(az.degrees, 338.13295291812307, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, -47.74510120858602, 0.0005 * arcsecond)
     compare(az.degrees, 338.13295291812307, 0.0005 * arcsecond)
 
@@ -2987,11 +2987,11 @@ def test_moon_topocentric_date2(de405):
     compare(alt.degrees, 36.381265580736255, 0.0005 * arcsecond)
     compare(az.degrees, 156.2971102404744, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 36.40348032108563, 0.0005 * arcsecond)
     compare(az.degrees, 156.2971102404744, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 36.403705864717445, 0.0005 * arcsecond)
     compare(az.degrees, 156.2971102404744, 0.0005 * arcsecond)
 
@@ -3013,11 +3013,11 @@ def test_moon_topocentric_date3(de405):
     compare(alt.degrees, 28.439387966372543, 0.0005 * arcsecond)
     compare(az.degrees, 191.29497427201525, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, 28.46951344291743, 0.0005 * arcsecond)
     compare(az.degrees, 191.29497427201525, 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, 28.46981916998486, 0.0005 * arcsecond)
     compare(az.degrees, 191.29497427201525, 0.0005 * arcsecond)
 
@@ -3039,11 +3039,11 @@ def test_moon_topocentric_date4(de405):
     compare(alt.degrees, (41.92040135025528, -47.74510120858602, 36.381265580736255, 28.439387966372543), 0.0005 * arcsecond)
     compare(az.degrees, (151.19707488767745, 338.13295291812307, 156.2971102404744, 191.29497427201525), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz('standard')
+    alt, az, distance = apparent.altaz('standard', usno=True)
     compare(alt.degrees, (41.938650930940234, -47.74510120858602, 36.40348032108563, 28.46951344291743), 0.0005 * arcsecond)
     compare(az.degrees, (151.19707488767745, 338.13295291812307, 156.2971102404744, 191.29497427201525), 0.0005 * arcsecond)
 
-    alt, az, distance = apparent.altaz(10.0, 1010.0)
+    alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
     compare(alt.degrees, (41.938836248377605, -47.74510120858602, 36.403705864717445, 28.46981916998486), 0.0005 * arcsecond)
     compare(az.degrees, (151.19707488767745, 338.13295291812307, 156.2971102404744, 191.29497427201525), 0.0005 * arcsecond)
 

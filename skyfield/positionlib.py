@@ -311,7 +311,7 @@ class ICRF(object):
                 Angle(radians=dec, signed=True),
                 Distance(au))
 
-    def altaz(self, temperature_C=None, pressure_mbar='standard'):
+    def altaz(self, temperature_C=None, pressure_mbar='standard', usno=False):
         """Compute (alt, az, distance) relative to the observer's horizon
 
         The altitude returned is an :class:`~skyfield.units.Angle`
@@ -332,8 +332,13 @@ class ICRF(object):
         If you want to override that value, simply provide a number
         through the ``pressure_mbar`` parameter.
 
+        By default, Skyfield smooths the transition of refraction near
+        the horizon to avoid discontinuities. Set ``usno=True`` to use
+        the strict USNO/NOVAS convention where refraction jumps
+        instantly to zero below -1.0°.
+
         """
-        return _to_altaz(self, temperature_C, pressure_mbar)
+        return _to_altaz(self, temperature_C, pressure_mbar, usno=usno)
 
     def separation_from(self, another_icrf):
         """Return the angle between this position and another.
@@ -880,7 +885,7 @@ class Geocentric(ICRF):
         from .toposlib import iers2010
         return iers2010.subpoint(self)
 
-def _to_altaz(position, temperature_C, pressure_mbar):
+def _to_altaz(position, temperature_C, pressure_mbar, usno=False):
     """Compute (alt, az, distance) relative to the observer's horizon."""
     cb = position.center_barycentric
     if cb is not None:
@@ -902,7 +907,7 @@ def _to_altaz(position, temperature_C, pressure_mbar):
         if refract is None:
             raise ValueError(_altaz_message)
         alt = position.center.refract(
-            alt * RAD2DEG, temperature_C, pressure_mbar,
+            alt * RAD2DEG, temperature_C, pressure_mbar, usno=usno
         )
 
     return alt, Angle(radians=az), Distance(r_au)

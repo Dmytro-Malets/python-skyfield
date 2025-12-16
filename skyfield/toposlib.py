@@ -97,7 +97,7 @@ class GeographicPosition(ITRSPosition):
         sprime = -47.0e-6 * (t.whole - T0 + t.tdb_fraction) / 36525.0
         return (t.gast + self.longitude.hours + sprime / 54000.0) % 24.0
 
-    def refract(self, altitude_degrees, temperature_C, pressure_mbar):
+    def refract(self, altitude_degrees, temperature_C, pressure_mbar, usno=False):
         """Predict how the atmosphere will refract a position.
 
         Given a body that is standing ``altitude_degrees`` above the
@@ -105,14 +105,15 @@ class GeographicPosition(ITRSPosition):
         altitude given the supplied temperature and pressure, either of
         which can be the string ``'standard'`` to use 10°C and a
         pressure of 1010 mbar adjusted for the elevation of this
-        geographic location.
+        geographic location. Set ``usno=True`` to use the strict USNO/NOVAS
+        convention for refraction near the horizon.
 
         """
         if temperature_C == 'standard':
             temperature_C = 10.0
         if pressure_mbar == 'standard':
             pressure_mbar = 1010.0 * exp(-self.elevation.m / 9.1e3)
-        alt = refract(altitude_degrees, temperature_C, pressure_mbar)
+        alt = refract(altitude_degrees, temperature_C, pressure_mbar, usno=usno)
         return Angle(degrees=alt)
 
     def rotation_at(self, t):

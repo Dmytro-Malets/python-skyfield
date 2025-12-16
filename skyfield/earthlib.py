@@ -134,23 +134,41 @@ def earth_rotation_angle(jd_ut1, fraction_ut1=0.0):
     th = 0.7790572732640 + 0.00273781191135448 * (jd_ut1 - T0 + fraction_ut1)
     return (th % 1.0 + jd_ut1 % 1.0 + fraction_ut1) % 1.0
 
-def refraction(alt_degrees, temperature_C, pressure_mbar):
-    """Given an observed altitude, estimate atmospheric refraction, in degrees.
+def refraction(alt_degrees, temperature_C, pressure_mbar, usno=False):
+    """Given an observed altitude, return how much the image is refracted.
 
-    Zero refraction is returned both for objects very near the zenith,
-    as well as for objects more than one degree below the horizon.
+    Skyfield applies a full refraction correction down to -3.0°,
+    followed by a smooth cosine-blended tapering between -3.0°
+    and -5.0°, after which the correction reaches zero.
 
+    If ``usno=True`` is instead specified, the correction follows
+    the NOVAS convention of a hard cutoff at -1.0°.
     """
-    r = 0.016667 / tan((alt_degrees + 7.31 / (alt_degrees + 4.4)) * DEG2RAD)
+    safe_alt = clip(alt_degrees, -4.0, 89.9)
+    r = 0.016667 / tan((safe_alt + 7.31 / (safe_alt + 4.4)) * DEG2RAD)
     d = r * (0.28 * pressure_mbar / (temperature_C + 273.0))
-    return where((-1.0 <= alt_degrees) & (alt_degrees <= 89.9), d, 0.0)
 
-def refract(alt_degrees, temperature_C, pressure_mbar):
-    """Given an unrefracted `alt` determine where it will appear in the sky."""
+    if usno:
+        return where((-1.0 <= alt_degrees) & (alt_degrees <= 89.9), d, 0.0)
+    else:
+        t = (alt_degrees - (-5.0)) / 2.0
+        cosine_factor = (1.0 - cos(t * pi)) / 2.0
+
+        factor = where(alt_degrees > 89.9, 0.0,
+                       where(alt_degrees < -5.0, 0.0,
+                             where(alt_degrees > -3.0, 1.0,
+                                   cosine_factor)))
+
+        return d * factor
+
+def refract(alt_degrees, temperature_C, pressure_mbar, usno=False):
+    """Given an unrefracted `alt` determine where it will appear in the sky.
+    The ``usno`` flag can be set to ``True`` to follow the NOVAS refraction convention.
+    """
     alt = alt_degrees
     while True:
         alt1 = alt
-        alt = alt_degrees + refraction(alt, temperature_C, pressure_mbar)
+        alt = alt_degrees + refraction(alt, temperature_C, pressure_mbar, usno=usno)
         converged = nan_to_num(abs(alt - alt1)).max() <= 3.0e-5
         if converged:
             break

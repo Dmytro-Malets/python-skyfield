@@ -11,4 +11,4 @@ def test_reverse_terra_with_zero_iterations():
     assert abs(elevation_m - (AU_M * sqrt(2) - ERAD)) < one_millimeter
 
 def test_refract_with_nan_does_not_loop_forever():
-    assert isnan(refract(nan, 10.0, 1010.0))
+    assert isnan(refract(nan, 10.0, 1010.0, usno=True))

@@ -233,7 +233,7 @@ def output_subroutine_tests(dates):
         r = novas.refract(location, 90 - angle, 2)
         output(locals(), """\
             def test_refraction{i}():
-                r = earthlib.refraction({angle}, {temperature}, {pressure})
+                r = earthlib.refraction({angle}, {temperature}, {pressure}, usno=True)
                 compare(r, {r!r}, 1e-9 * arcsecond)
             """)
 
@@ -243,7 +243,7 @@ def output_subroutine_tests(dates):
         alt, az = altaz_maneuver(T0, northpole, 0.0, angle, ref=2)
         output(locals(), """\
             def test_refract{i}():
-                alt = earthlib.refract({angle!r}, 10.0, 1010.0)
+                alt = earthlib.refract({angle!r}, 10.0, 1010.0, usno=True)
                 compare(alt, {alt!r}, 1e-9 * arcsecond)
             """)
 
@@ -407,11 +407,11 @@ def output_topocentric_tests(dates):
             compare(alt.degrees, {alt!r}, 0.0005 * arcsecond)
             compare(az.degrees, {az!r}, 0.0005 * arcsecond)
 
-            alt, az, distance = apparent.altaz('standard')
+            alt, az, distance = apparent.altaz('standard', usno=True)
             compare(alt.degrees, {alt2!r}, 0.0005 * arcsecond)
             compare(az.degrees, {az2!r}, 0.0005 * arcsecond)
 
-            alt, az, distance = apparent.altaz(10.0, 1010.0)
+            alt, az, distance = apparent.altaz(10.0, 1010.0, usno=True)
             compare(alt.degrees, {alt3!r}, 0.0005 * arcsecond)
             compare(az.degrees, {az3!r}, 0.0005 * arcsecond)
 
